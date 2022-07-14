@@ -1,0 +1,31 @@
+CREATE PROCEDERE UserAddorEdit
+UserID int,
+FirstName varchar(50),
+LastName varchar(50),
+UserName varchar(50),
+Password varchar(50)
+AS
+IF @UserID = 0
+BEGIN
+INSERT INTO Users (FirstName,LastName,UserName,Password)
+VALUES(@FirstName,@LastName,@UserName,@Password)
+END
+ELSE
+UPDATE Users 
+SET
+FirstName =@FirstName,
+LastName =@LastName,
+UserName =@UserName,
+Password =@Password
+WHERE UserID=@UserID
+END
+
+
+=====
+
+CREATE PROCEDURE UserDisplay
+UserID int
+AS
+BEGIN
+SELECT * FROM Users
+WHERE UserID=@UserID
