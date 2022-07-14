@@ -10,7 +10,7 @@ namespace UserLogin
 {
     public partial class login : System.Web.UI.Page
     {
-        SqlConnection conn = new SqlConnection("Data Source=CORET;Initial Catalog=UserLoginDB;Integrated Security=True;");
+        SqlConnection conn = new SqlConnection("Data Source=DESKTOP-EN11BF6;Initial Catalog=UserLoginDB;Integrated Security=True;");
         protected void Page_Load(object sender, EventArgs e)
         {
           
